@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="15dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/topLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+
+            >
+
+            <ImageView
+                android:id="@+id/backBT"
+                android:layout_width="25dp"
+                android:src="@drawable/baseline_arrow_back_24"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:layout_height="25dp"/>
+
+            <TextView
+                android:id="@+id/selectCountryTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginStart="8dp"
+                android:textColor="@color/dark_gray"
+                android:layout_toRightOf="@id/backBT"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Select country"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/searchLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gray_rectangle"
+            android:padding="10dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/topLayout">
+
+            <EditText
+                android:id="@+id/searchTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Search country"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat"
+                android:background="@android:color/transparent"/>
+
+
+
+        </RelativeLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/searchLL"  >
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/countriesRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/country_item"
+            />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/continueBT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="continue"
+            android:paddingVertical="8dp"
+            android:layout_marginHorizontal="30dp"
+            android:visibility="gone"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/white"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/dark_button"/>
+
+    </RelativeLayout>
+
+</layout>
